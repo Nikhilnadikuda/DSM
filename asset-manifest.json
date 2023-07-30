@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/dsm/static/css/main.ea3fee8f.css",
+    "main.js": "/dsm/static/js/main.f61d250a.js",
+    "static/media/logo1.png": "/dsm/static/media/logo1.a09c6f54efebc73ab290.png",
+    "static/media/robb.png": "/dsm/static/media/robb.a0a1bf0fdca725b8cd5b.png",
+    "static/media/snip.jpg": "/dsm/static/media/snip.f035b409734948340601.jpg",
+    "static/media/great.jpg": "/dsm/static/media/great.3fe67ef084fc969bc473.jpg",
+    "static/media/beast.jpg": "/dsm/static/media/beast.a2d4a6dca344d2a483a6.jpg",
+    "static/media/vips.jpg": "/dsm/static/media/vips.4c9e25e9ec845e0924da.jpg",
+    "static/media/noobie.jpg": "/dsm/static/media/noobie.29f7d85becff8d33b3c3.jpg",
+    "static/media/avada.jpg": "/dsm/static/media/avada.26be188c842a51d5f3a4.jpg",
+    "static/media/oggy.jpg": "/dsm/static/media/oggy.756be409c779f3e64fa5.jpg",
+    "static/media/pro.jpg": "/dsm/static/media/pro.c45c82e92876f33b7e2e.jpg",
+    "static/media/blackdevil.jpg": "/dsm/static/media/blackdevil.ab6236a7460d5402ba59.jpg",
+    "static/media/aarav.jpg": "/dsm/static/media/aarav.efc176de628a390c4d6c.jpg",
+    "static/media/limdo.jpg": "/dsm/static/media/limdo.6ccae4b8960d7f49fe5f.jpg",
+    "static/media/beard.jpg": "/dsm/static/media/beard.e6ff0f098e0a1a48b733.jpg",
+    "static/media/blast.jpg": "/dsm/static/media/blast.994591823f470aabc240.jpg",
+    "static/media/mavi.jpg": "/dsm/static/media/mavi.1fa3dc91dcfb9afbb8ab.jpg",
+    "static/media/yaduveer.jpg": "/dsm/static/media/yaduveer.cded60803ed4ecf2e1c2.jpg",
+    "index.html": "/dsm/index.html",
+    "main.ea3fee8f.css.map": "/dsm/static/css/main.ea3fee8f.css.map",
+    "main.f61d250a.js.map": "/dsm/static/js/main.f61d250a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ea3fee8f.css",
+    "static/js/main.f61d250a.js"
+  ]
+}
