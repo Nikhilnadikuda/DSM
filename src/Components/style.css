@@ -1,0 +1,181 @@
+.sidebar {
+    margin-top: -100px;
+    padding: 0;
+    width: 100px;
+    background-color: #252729;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.sideitems {
+    margin-top: 25px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sideitems div {
+    cursor: pointer;
+    width: 99%;
+    color: white;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.sideitems div:hover {
+    background-color: green;
+}
+
+.sidebar div a {
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.navbar {
+    margin-left: 100px;
+    width: 100%;
+    overflow: hidden;
+    background-color: #323438;
+    position: fixed;
+    top: 0;
+    height: 80px;
+}
+
+.sideitems .icons {
+    margin-top: 5px;
+    text-align: center;
+    margin-bottom: 3px;
+    font-size: 20px;
+}
+
+.logo {
+    cursor: pointer;
+    border-radius: 8px;
+    margin-left: 12px;
+    height: 70px;
+    width: 75px;
+}
+
+.item {
+    text-align: center;
+}
+
+.mainapp {
+    max-width: 100%;
+    margin-top: 100px;
+}
+
+.main {
+    margin-left: 120px;
+}
+
+.lines {
+    opacity: 0;
+}
+
+.navbar h2 {
+    color: white;
+    margin-left: 34%;
+}
+
+.back {
+    font-weight: 400;
+    outline: none;
+    background-color: green;
+    border-radius: 5px;
+    color: aliceblue;
+    width: 100px;
+    cursor: pointer;
+    margin-left: 60px;
+    margin-top: 40px;
+    padding: 8px
+}
+
+body {
+    background-color: antiquewhite;
+}
+
+.banner{
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+    height: 100px;
+    width: 500px;
+}
+
+.active{
+    color:white;
+}
+
+@media only screen and (max-width: 600px) {
+    .lines {
+        opacity: 1;
+        cursor: pointer;
+    }
+    .lines .bars {
+        margin-top: 40px;
+        margin-left: 15px;
+        font-size: 20px;
+    }
+    .sidebar {
+        width: 60px;
+    }
+    .sideitems {
+        align-items: end;
+        justify-content: end;
+    }
+    .sideitems div {
+        cursor: pointer;
+        color: white;
+        margin-top: 25px;
+        font-size: 14px;
+    }
+    .navbar {
+        margin-left: 60px;
+        width: 98%;
+        overflow: hidden;
+        background-color: #323438;
+        position: fixed;
+        top: 0;
+        height: 80px;
+    }
+    .navbar h2 {
+        color: white;
+        margin-left: 4%;
+    }
+    .sideitems .item1 {
+        margin-left: 7px;
+    }
+    .sideitems .item2 {
+        margin-left: 8px;
+    }
+    .sideitems .item3 {
+        margin-left: 8px;
+    }
+    .sideitems .item4 {
+        margin-left: 1px;
+    }
+    .sideitems div p {
+        font-size: 10px;
+        margin-left: 1px;
+    }
+    .sideitems div:hover {
+        background-color: #252729;
+    }
+    .logo {
+        margin-left: 4px;
+        height: 55px;
+        width: 50px;
+        margin-bottom: 67px;
+    }
+    .main {
+        margin-left: 70px;
+    }
+    .about h3 {
+        margin-left: 54px;
+    }
+}
