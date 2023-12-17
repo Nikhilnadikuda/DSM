@@ -1,0 +1,343 @@
+  ion-content {
+    --background: white;
+  }
+
+  ion-item {
+    width: 193px;
+    height: 36px;
+  }
+
+  ion-input {
+    width: 193px;
+    height: 36px;
+  }
+
+
+
+  ion-list {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-height: 150px;
+    overflow-y: auto;
+    overflow-x: hidden; 
+    width: 193px;
+  }
+
+  ion-item {
+    cursor: pointer;
+
+  }
+
+
+
+  ion-label {
+    padding: 8px;
+    display: block;
+  }
+
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    color: blueviolet;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: blueviolet;
+    border-radius: 6px;
+  }
+
+  .search-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 193px;
+    height: 36px;
+    border: 1px solid black;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+
+  .add-icon-active {
+    font-size: 25px;
+    color: #255ec1;
+  }
+
+  .add-icon-inactive {
+    font-size: 25px;
+    color: gray;
+  }
+
+
+
+  .inputs {
+    border: none;
+    outline: none;
+    background: none;
+    width: 90%;
+  }
+
+
+  .dropdown{
+    margin-top: 2px;
+  }
+
+
+  .cursor-pointer{
+    cursor: pointer;
+  }
+
+  .search-icon{
+    margin-right: 6px;
+    font-size: 15px;
+    color: blueviolet;
+  }
+
+
+  .season-dropdown{
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-height: 150px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 193px;
+  }
+
+  .custom-popover {
+    --max-height: 150px;
+  }
+
+  ion-select {
+    --popover-min-width: 200px;
+    --popover-max-width: 300px;
+    --popover-min-height: 150px;
+    --popover-max-height: 250px;
+  }
+
+
+/* your-component.component.scss */
+
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.selected-options {
+  border: 1px solid #ccc;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.custom-select {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  display: none;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+.custom-select.open {
+  display: block;
+}
+
+.selected-option {
+  margin-right: 5px;
+  background-color: #e0e0e0;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+
+
+
+
+
+
+// -----------------------------------------------------
+
+/* styled-dropdown.component.css */
+
+label{
+  height: 20px;
+  width: 100px;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown button {
+  height: 36px;
+  width: 193px;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 5px 25px 5px 10px;
+  /* Added additional padding for the caret */
+  font-size: 14px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  /* position: relative; */
+}
+
+.dropdown button::after {
+  content: '▼';
+  /* Unicode for downward arrow */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.dropdown-content {
+  height: 150px;
+  overflow-y: auto;
+  width: 193px;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.check{
+  height: 20px;
+  width: 20px;
+}
+
+.dropbtn{
+  color: black;
+}
+
+.dropdown-content{
+  overflow-x: hidden;
+}
+
+.item{
+  margin: 4px;
+}
+
+
+// search with dropdown 
+
+<div class="search-input">
+    <input type="text" [(ngModel)]="searchInput" placeholder="Search" (input)="onSearchChange($event)" (keydown.enter)="selectTopSuggestion()" class="inputs">
+    <ion-icon name="add-circle"  *ngIf="showNoResultsMessage" class="add-icon-active cursor-pointer"></ion-icon>
+    <ion-icon name="add-circle" *ngIf="!showNoResultsMessage" class="add-icon-inactive"></ion-icon>
+  </div>
+  <ion-list *ngIf="showResults" lines="full" class="dropdown">
+    <ion-item *ngFor="let result of filteredResults" (click)="selectResult(result)">
+      {{ result }}
+    </ion-item>
+    <ion-item *ngIf="showNoResultsMessage">
+      No results found
+    </ion-item>
+  </ion-list>
+
+<div class="search-input">
+    <input type="text" [(ngModel)]="searchInput" placeholder="Search" (input)="onSearchChange($event)" (keydown.enter)="selectTopSuggestion()" class="inputs">
+    <ion-icon name="search" class="search-icon cursor-pointer"></ion-icon>
+  </div>
+  <ion-list *ngIf="showResults" lines="full" class="dropdown">
+    <ion-item *ngFor="let result of filteredResults">
+      <ion-checkbox (click)="selectResult(result)" labelPlacement="end" justify="start">
+        {{ result }}
+      </ion-checkbox>
+    </ion-item>
+    <ion-item *ngIf="showNoResultsMessage">
+      No results found
+    </ion-item>
+  </ion-list>
+-----------------------------------ts------------------------------------------
+searchInput = '';
+  suggestions = ['Apple', 'Banana', 'Cherry', 'Date', 'Grape', 'Lemon', 'Orange'];
+  filteredResults: string[] = [];
+  showResults = false;
+
+  onSearchChange(event: any) {
+    const inputValue = event.target.value.toLowerCase();
+
+    if (inputValue.trim() === '') {
+      this.showResults = false;
+      return;
+    }
+
+    this.filteredResults = this.suggestions.filter(suggestion => suggestion.toLowerCase().includes(inputValue));
+    this.showResults = true;
+  }
+
+  selectTopSuggestion() {
+    if (this.filteredResults.length > 0) {
+      this.searchInput = this.filteredResults[0];
+      this.showResults = false;
+    }
+  }
+
+  selectResult(result: string) {
+    this.searchInput = result;
+    this.showResults = false;
+  }
+
+  get showNoResultsMessage() {
+    return this.showResults && this.filteredResults.length === 0;
+  }
+
+
+options = [
+    { label: 'Option 1', checked: false },
+    { label: 'Option 2', checked: false },
+    { label: 'Option 3', checked: false },
+    { label: 'Option 1', checked: false },
+    { label: 'Option 2', checked: false },
+    { label: 'Option 3', checked: false },
+  ];
+  
+-----------------dropdown-----------------------------
+
+  buttonText = 'Select Options';
+
+  toggleDropdown() {
+    const dropdown = document.getElementById('myDropdown');
+    if (dropdown) {
+      dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+    }
+  }
+
+  updateButtonText() {
+    console.log("clicked");
+    
+    const selectedOptions = this.options.filter(option => option.checked).map(option => option.label);
+    this.buttonText = selectedOptions.length > 0 ? selectedOptions.join(', ') : 'Select Options';
+  }
+//season select
+
+
+// dropdown
+<ion-content>
+
+
+<div class="dropdown">
+  <button (click)="toggleDropdown()" class="dropbtn">{{ buttonText }}</button>
+  <div id="myDropdown" class="dropdown-content">
+    <div class="dropdown-item" *ngFor="let option of options">
+      <ion-item class="item">
+        <ion-label>{{ option.label }}</ion-label>
+        <ion-checkbox [(ngModel)]="option.checked" (ionChange)="updateButtonText()" slot="start"></ion-checkbox>
+      </ion-item>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+</ion-content>
+
+
+
