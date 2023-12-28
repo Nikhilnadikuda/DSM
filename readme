@@ -341,3 +341,110 @@ options = [
 
 
 
+
+// 28-12-2023
+
+<div  style="width:193px" id="open-popover-1">
+  <div style="display:flex;justify-content:space-between;align-items:center;border:1px solid gray;padding:2px;border-radius:4px">
+    <input type="text" placeholder="Search" style="width:90%;border:none;outline:none" />
+  <span style="margin-right:4px">&#43;</span>
+  </div>
+</div>
+<ion-popover
+  trigger="open-popover-1"
+  show-backdrop="false"
+  keyboard-close="false"
+  style="--width:193px;--height:120px"
+>
+  <ng-template>
+    <ion-content>
+      <ion-list>
+        <ion-item>
+          <ion-checkbox labelPlacement="end" justify="start">
+            Option 1
+          </ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-checkbox labelPlacement="end" justify="start">
+            Option 2
+          </ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-checkbox labelPlacement="end" justify="start">
+            Option 3
+          </ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-checkbox labelPlacement="end" justify="start">
+            Option 4
+          </ion-checkbox>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ng-template>
+</ion-popover>
+
+
+//
+
+<div  style="width:193px" id="open-popover">
+  <div style="display:flex;justify-content:space-between;align-items:center;border:1px solid gray;padding:2px;border-radius:4px">
+    <input type="text" placeholder="Search" style="width:90%;border:none;outline:none" />
+  <span style="margin-right:4px">&#43;</span>
+  </div>
+</div>
+<ion-popover
+  trigger="open-popover"
+  show-backdrop="false"
+  style="--width:193px;--height:120px"
+  dismissOnSelect="true"
+  keyboard-close="false"
+>
+  <ng-template>
+    <ion-content>
+      <ion-list>
+        <ion-item>Option 1</ion-item>
+        <ion-item>Option 2</ion-item>
+        <ion-item>Option 3</ion-item>
+        <ion-item>Option 4</ion-item>
+      </ion-list>
+    </ion-content>
+  </ng-template>
+</ion-popover>
+
+
+//
+
+<div  style="width:193px" id="open-popover">
+  <div style="display:flex;justify-content:space-between;align-items:center;border:1px solid gray;padding:2px;border-radius:4px">
+    <input type="text" placeholder="Search" style="width:90%;border:none;outline:none" />
+  <span style="margin-right:4px">&#43;</span>
+  </div>
+</div>
+<ion-popover
+  trigger="open-popover"
+  show-backdrop="false"
+  class="pop"
+  keyboard-close="false"
+>
+  <ng-template>
+    <ion-content>
+      <ion-radio-group value="fixed">
+        <ion-item>
+          <ion-radio justify="start" labelPlacement="end">Option 1</ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-radio justify="start" labelPlacement="end">Option 2</ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-radio justify="start" labelPlacement="end">Option 3</ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-radio justify="start" labelPlacement="end">Option 4</ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-content>
+  </ng-template>
+</ion-popover>
+
+
